@@ -1,0 +1,23 @@
+package:
+    name: pygtsam
+
+source:
+  path: pygtsam
+  
+build:
+    number: 0
+
+requirements:
+    build:
+        - cmake
+        - numpy
+        - mkl
+        - python
+    run:
+        - python
+        - numpy
+        - mkl
+
+about:
+    home: 
+    license: BSD
