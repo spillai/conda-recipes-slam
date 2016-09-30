@@ -1,16 +1,10 @@
-# Tested on Mac OS X 10.9 using clang compiler provided by XCode
 package:
     name: gtsam
-    version: 4.0.0-alpha1
-
-# source:
-#     fn: gtsam-3.2.1.zip
-#     url: https://research.cc.gatech.edu/borg/sites/edu.borg/files/downloads/gtsam-3.2.1.zip
+    version: 3.2.1
 
 source:
-    git_url: https://bitbucket.org/gtborg/gtsam.git
-    git_branch: develop
-    git_tag: 4.0.0-alpha1
+    fn: gtsam-3.2.1.zip
+    url: https://research.cc.gatech.edu/borg/sites/edu.borg/files/downloads/gtsam-3.2.1.zip
   
 build:
     number: 0
