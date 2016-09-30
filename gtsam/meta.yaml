@@ -1,0 +1,30 @@
+# Tested on Mac OS X 10.9 using clang compiler provided by XCode
+package:
+    name: gtsam
+    version: 3.2.1
+
+source:
+    fn: gtsam-3.2.1.zip
+    url: https://research.cc.gatech.edu/borg/sites/edu.borg/files/downloads/gtsam-3.2.1.zip
+
+build:
+    number: 0
+
+requirements:
+    build:
+        - cmake
+        - numpy
+        - python
+        - zlib
+    run:
+        - python
+        - numpy
+        - zlib
+# test:
+#     imports:
+#       - cv2
+#       - cv2.cv
+
+about:
+    home: gtsam.org
+    license: BSD

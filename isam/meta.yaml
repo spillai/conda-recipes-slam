@@ -1,0 +1,30 @@
+package:
+    name: isam
+    version: 1.7
+
+source:
+    fn: isam_v1_7.tgz
+    url: http://people.csail.mit.edu/kaess/isam/isam_v1_7.tgz
+
+# source:
+#   svn_url: https://svn.csail.mit.edu/isam
+#   svn_rev: 10
+#   svn_ignore_externals: True
+
+build:
+    number: 0
+
+requirements:
+    build:
+        - cmake
+        - numpy
+        - python
+        - zlib
+    run:
+        - python
+        - numpy
+        - zlib
+
+about:
+    home: http://people.csail.mit.edu/kaess/isam/
+    license: GNU LGPL v2.1
