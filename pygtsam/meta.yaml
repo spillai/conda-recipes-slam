@@ -1,5 +1,6 @@
 package:
     name: pygtsam
+    version: 3.2.1
 
 source:
   path: pygtsam
@@ -13,17 +14,16 @@ requirements:
       - cmake
       - numpy
       - mkl
-      - gtsam
       - zlib
-      - pkg-config
-        
+      - gtsam
+      
     run:
       - python
       - numpy
       - mkl
       - zlib
       - gtsam
-      - pkg-config
+      
 about:
-    home: 
+    home: https://collab.cc.gatech.edu/borg/gtsam/
     license: BSD

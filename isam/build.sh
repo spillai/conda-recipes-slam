@@ -12,5 +12,5 @@ cmake                                                               \
     -DCMAKE_INSTALL_PREFIX=${PREFIX}                                \
     -DUSE_GUI=OFF                                                   \
     ..
-make -j 6
+make -j $CPU_COUNT
 make install
