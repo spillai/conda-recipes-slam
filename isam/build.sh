@@ -8,9 +8,19 @@ fi
 
 mkdir build
 cd build
-cmake                                                               \
-    -DCMAKE_INSTALL_PREFIX=${PREFIX}                                \
-    -DUSE_GUI=OFF                                                   \
-    ..
+
+if [ `uname` == Darwin ]; then
+    cmake                                \
+        -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+        -DCMAKE_OSX_DEPLOYMENT_TARGET="" \
+        -DUSE_GUI=OFF                    \
+        ..
+else
+    cmake                                \
+        -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+        -DUSE_GUI=OFF                    \
+        ..
+fi
+
 make -j $CPU_COUNT
 make install
