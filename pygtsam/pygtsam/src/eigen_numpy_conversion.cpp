@@ -1,9 +1,9 @@
 // Author(s): Sudeep Pillai (spillai@csail.mit.edu)
 // License: MIT
 
-#include "utils/template.h"
-#include "utils/container.h"
-#include "utils/eigen_numpy_conversion.hpp"
+#include <pygtsam/utils/template.h>
+#include <pygtsam/utils/container.h>
+#include <pygtsam/utils/eigen_numpy_conversion.hpp>
 
 namespace bp = boost::python;
 // namespace np = boost::numpy;

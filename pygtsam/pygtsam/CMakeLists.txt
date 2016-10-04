@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 2.6.0)
-set(CMAKE_CXX_FLAGS "-fopenmp -fpermissive -g -Wall -march=native -msse -msse2 -msse3 -mssse3 -msse4 -ffast-math -mfpmath=sse -DNDEBUG  -std=c++11 -O3 -fPIC")
+
+# -fopenmp -fpermissive -g -Wall -march=native -msse -msse2 -msse3 -mssse3 -msse4 -ffast-math -mfpmath=sse -DNDEBUG  -std=c++11 -O3 -fPIC
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive -g -Wall -DNDEBUG -std=c++11 -fPIC")
 
 # Check the architecture and set CMAKE_LIBRARY_ARCHITECTURE accordingly
 if(UNIX)
@@ -8,42 +10,45 @@ if(UNIX)
   endif()
 endif()
 
-# find_package(Eigen3 REQUIRED)
+
 find_package(PkgConfig REQUIRED)
+# find_package(Eigen3 REQUIRED)
+
 # PKG_CHECK_MODULES(OpenCV REQUIRED opencv>=2.4.10)
 # message("FOUND OPENCV: ${OPENCV_LDFLAGS}")
 
-include(cmake/boost-python.cmake)
+include(cmake/FindNumPy.cmake)
 # include(cmake/FindEigen3.cmake)
 include(cmake/FindCholmod.cmake)
-include(cmake/FindNumPy.cmake)
+include(cmake/boost-python.cmake)
 
 ###################################################################################
 # Find GTSAM components
 find_package(GTSAM REQUIRED) # Uses installed package
-include_directories(${GTSAM_INCLUDE_DIR})
+# include_directories(${GTSAM_INCLUDE_DIR})
 
 # Include python
-set(EIGEN3_INCLUDE_DIRS ${GTSAM_DIR}/../../../include/gtsam/3rdparty/Eigen)
+set(EIGEN3_INCLUDE_DIRS ${CMAKE_INSTALL_PREFIX}/include/gtsam/3rdparty/Eigen)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
-# include_directories(${CMAKE_INSTALL_PREFIX}/include)
-# include_directories(${CMAKE_INSTALL_PREFIX}/include/eigen3)
-# include_directories(${NUMPY_INCLUDE_DIRS})
+include_directories(${CMAKE_INSTALL_PREFIX}/include)
+include_directories(${CMAKE_INSTALL_PREFIX}/include/gtsam/3rdparty/Eigen)
+include_directories(${NUMPY_INCLUDE_DIRS})
 include_directories(${EIGEN3_INCLUDE_DIRS})
-# include_directories(${CHOLMOD_INCLUDES})
+include_directories(${CHOLMOD_INCLUDES})
+message("EIGEN: ${EIGEN3_INLUDE_DIRS}")
+message("PREFIX: ${CMAKE_INSTALL_PREFIX}/include")
+# message("GTSAM: ${GTSAM_INCLUDE_DIR}")
 
-message("INCLUDE *********** ${EIGEN3_INCLUDE_DIRS}/")
-message("CURR *********** ${CMAKE_CURRENT_SOURCE_DIR}/")
 
 # =========== bot_types Python wrapper ==============
-boost_python_module(pybot_types
-    src/pybot_types.cpp)
-target_link_libraries(pybot_types boost_system boost_python)
-install(TARGETS pybot_types
-  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
-  LIBRARY DESTINATION lib
-  ARCHIVE DESTINATION lib
-)
+# boost_python_module(pybot_types
+#     src/pybot_types.cpp)
+# target_link_libraries(pybot_types boost_system boost_python)
+# install(TARGETS pybot_types
+#   PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+#   LIBRARY DESTINATION lib
+#   ARCHIVE DESTINATION lib
+# )
 
 # # =========== bot_cv_types Python wrapper ==============
 # boost_python_module(pybot_cv_types
@@ -78,7 +83,7 @@ install(TARGETS pybot_eigen_types
 
 # =========== pygtsam Python wrapper ==============
 boost_python_module(pygtsam src/pygtsam.cpp)
-target_link_libraries(pygtsam boost_python boost_system pybot_types pybot_eigen_types gtsam)
+target_link_libraries(pygtsam boost_python boost_system pybot_eigen_types gtsam)
 install(TARGETS pygtsam
   PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
   LIBRARY DESTINATION lib

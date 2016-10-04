@@ -9,15 +9,21 @@ build:
 
 requirements:
     build:
-        - cmake
-        - numpy
-        - mkl
-        - python
+      - python
+      - cmake
+      - numpy
+      - mkl
+      - gtsam
+      - zlib
+      - pkg-config
+        
     run:
-        - python
-        - numpy
-        - mkl
-
+      - python
+      - numpy
+      - mkl
+      - zlib
+      - gtsam
+      - pkg-config
 about:
     home: 
     license: BSD

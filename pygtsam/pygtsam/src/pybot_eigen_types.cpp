@@ -1,7 +1,7 @@
 // Author(s): Sudeep Pillai (spillai@csail.mit.edu)
 // License: MIT
 
-#include "pybot_eigen_types.hpp"
+#include <pygtsam/pybot_eigen_types.hpp>
 
 namespace bot { namespace python {
 

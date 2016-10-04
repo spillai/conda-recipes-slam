@@ -4,8 +4,8 @@
 #include <boost/python.hpp>
 #include <boost/python/suite/indexing/vector_indexing_suite.hpp>
 
-// pybot_types
-#include "pybot_types.hpp"
+// pybot_eigen_types
+#include <pygtsam/pybot_eigen_types.hpp>
 
 // gtsam
 #include <gtsam/base/types.h>
@@ -41,7 +41,6 @@
 // Eigen
 #include <Eigen/Dense>
 #include <Eigen/Geometry>
-#include <opencv2/core/eigen.hpp>
 
 namespace py = boost::python;
 namespace gt = gtsam;
@@ -259,7 +258,7 @@ BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(gtSymbolprint, gt::Symbol::print, 0, 1)
 BOOST_PYTHON_MODULE(pygtsam)
 {
   // Main types export
-  bot::python::init_and_export_converters();
+  bot::python::init_and_export_eigen_converters();
   py::scope scope = py::scope();
 
   // --------------------------------------------------------------------

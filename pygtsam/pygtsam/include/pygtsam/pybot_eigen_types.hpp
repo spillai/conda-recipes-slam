@@ -11,11 +11,10 @@
 #include <boost/python.hpp>
 #include <boost/python/suite/indexing/vector_indexing_suite.hpp>
 
-// #include "utils/template.h"
-// #include "utils/container.h"
-// #include "utils/pair.h"
-// #include "utils/optional.h"
-#include "pybot_types.hpp"
+#include "utils/template.h"
+#include "utils/container.h"
+#include "utils/pair.h"
+#include "utils/optional.h"
 #include "utils/eigen_numpy_conversion.hpp"
 
 namespace bot { namespace python {

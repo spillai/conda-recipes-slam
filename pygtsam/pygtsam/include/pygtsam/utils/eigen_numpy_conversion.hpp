@@ -8,8 +8,9 @@
 #include <numpy/ndarrayobject.h>
 
 #include <Eigen/Eigen>
+#include <glog/logging.h>
+
 // #include <boost/numpy.hpp>
-// #include <glog/logging.h>
 // #include <numpy/arrayobject.h>
 
 namespace bot { namespace eigen {
