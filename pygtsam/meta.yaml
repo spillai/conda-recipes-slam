@@ -13,15 +13,11 @@ requirements:
       - python
       - cmake
       - numpy
-      - mkl
-      - zlib
       - gtsam
       
     run:
       - python
       - numpy
-      - mkl
-      - zlib
       - gtsam
       
 about:

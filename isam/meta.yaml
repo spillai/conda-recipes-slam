@@ -17,14 +17,9 @@ build:
 requirements:
     build:
         - cmake
-        - numpy
-        - python
-        - zlib
     run:
-        - python
-        - numpy
-        - zlib
-
+        - cmake
+        
 about:
     home: http://people.csail.mit.edu/kaess/isam/
     license: GNU LGPL v2.1

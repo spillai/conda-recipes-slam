@@ -12,15 +12,8 @@ build:
 requirements:
     build:
         - cmake
-        - numpy
-        - mkl
-        - python
-        - zlib
     run:
-        - python
-        - numpy
-        - mkl
-        - zlib
+        - cmake
 
 about:
     home: https://bitbucket.org/gtborg/gtsam
