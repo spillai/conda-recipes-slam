@@ -3,6 +3,11 @@
 https://github.com/jakevdp/conda-recipes
 https://github.com/alexbw/conda-lua-recipes
 
+conda create -n pybot python=2
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib
+export PYTHONPATH=$PYTHONPATH:$CONDA_PREFIX/lib
+
 ### To install packages
 ```
 # Install anaconda if you don't have it (instructions here for OS X)
@@ -21,7 +26,6 @@ conda install conda-build anaconda-client -y
 
 # Build all packages
 sh build_all.sh
-
 ```
 
 # More useful stuff
