@@ -1,0 +1,28 @@
+package:
+    name: pyisam
+
+source:
+  path: pyisam
+  
+build:
+    number: 0
+
+requirements:
+    build:
+        - cmake
+        - numpy
+        - mkl
+        - python
+        - pkg-config
+        - isam
+
+    run:
+        - python
+        - numpy
+        - mkl
+        - pkg-config
+        - isam
+
+about:
+    home: 
+    license: BSD
