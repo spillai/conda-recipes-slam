@@ -9,18 +9,13 @@ build:
 
 requirements:
     build:
-        - cmake
         - numpy
-        - mkl
         - python
-        - pkg-config
         - isam
 
     run:
         - python
         - numpy
-        - mkl
-        - pkg-config
         - isam
 
 about:

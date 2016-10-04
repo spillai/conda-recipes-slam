@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.6.0)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fpermissive -g -Wall -DNDEBUG -std=c++11 -fPIC")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive -g -Wall -DNDEBUG -std=c++11 -fPIC")
+# set(CMAKE_CXX_FLAGS "-fpermissive -g -Wall -DNDEBUG -std=c++11 -fPIC")
 
 # Check the architecture and set CMAKE_LIBRARY_ARCHITECTURE accordingly
 if(UNIX)
@@ -20,7 +21,7 @@ include_directories(${CMAKE_INSTALL_PREFIX}/include)
 include_directories(${NUMPY_INCLUDE_DIRS})
 include_directories(${EIGEN3_INCLUDE_DIR})
 include_directories(${CHOLMOD_INCLUDES})
-link_directories(${CMAKE_INSTALL_PREFIX}/lib)
+
 
 # =========== bot_eigen_types Python wrapper ==============
 boost_python_module(pybot_eigen_types
@@ -35,7 +36,9 @@ install(TARGETS pybot_eigen_types
 
 # =========== pyisam Python wrapper ==============
 boost_python_module(pyisam src/pyisam.cpp)
-target_link_libraries(pyisam boost_python boost_system pybot_eigen_types isam ${CHOLMOD_LIBRARIES})
+link_directories(${CMAKE_INSTALL_PREFIX}/lib)
+link_libraries(isam)
+target_link_libraries(pyisam boost_python boost_system pybot_eigen_types ${CHOLMOD_LIBRARIES})
 install(TARGETS pyisam
   PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
   LIBRARY DESTINATION lib
