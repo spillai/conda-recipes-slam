@@ -1,5 +1,6 @@
 package:
     name: pyisam
+    version: 1.7
 
 source:
   path: pyisam
