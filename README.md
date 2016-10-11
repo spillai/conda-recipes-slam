@@ -1,6 +1,7 @@
 # Build GTSAM and iSAM with conda
 
 https://github.com/jakevdp/conda-recipes
+
 https://github.com/alexbw/conda-lua-recipes
 
 ```
@@ -17,19 +18,20 @@ sh Miniconda-latest-MacOSX-x86_64.sh -b -p $HOME/anaconda
 
 # Add anaconda to your $PATH
 export PATH=$HOME/anaconda/bin:$PATH
+```
 
 ### To build packages
-```
-# Get the newest version of conda, as well as some conda build tools
+Get the newest version of conda, as well as some conda build tools
 conda update conda -y
 conda install conda-build anaconda-client -y
 
-# Build all packages
-sh build_all.sh
+Build all packages
+```sh
+build_all.sh
 ```
 
 # More useful stuff
-```
+```sh
 conda install -c asmeurer emacs=24.5
 conda install -c menpo eigen=3.2.7
 ```
