@@ -22,8 +22,10 @@ export PATH=$HOME/anaconda/bin:$PATH
 
 ### To build packages
 Get the newest version of conda, as well as some conda build tools
+```sh
 conda update conda -y
 conda install conda-build anaconda-client -y
+```
 
 Build all packages
 ```sh
