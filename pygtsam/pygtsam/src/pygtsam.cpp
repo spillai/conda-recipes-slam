@@ -46,11 +46,6 @@ namespace py = boost::python;
 namespace gt = gtsam;
 namespace NM = gt::noiseModel;
 
-namespace bot { namespace vision { 
-
-}
-}
-
 // ====================================================================
 // GTSAM Python Module
 // ====================================================================
