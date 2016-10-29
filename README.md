@@ -4,13 +4,13 @@ https://github.com/jakevdp/conda-recipes
 
 https://github.com/alexbw/conda-lua-recipes
 
-```
+```sh
 conda create -n pybot python=2
 ```
 Both `PYTHONPATH` and `LD_LIBRARY_PATH` should have been set automatically on environment activation. See activate.sh / deactivate.sh.
 
 ### To install packages
-```
+```sh
 # Install anaconda if you don't have it (instructions here for OS X)
 wget
 http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh
