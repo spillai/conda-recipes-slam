@@ -1,40 +1,37 @@
 # Build GTSAM and iSAM with conda
 
-https://github.com/jakevdp/conda-recipes
+Author: [Sudeep Pillai](http://people.csail.mit.edu/spillai)<br>
+License: MIT
 
-https://github.com/alexbw/conda-lua-recipes
-
-```sh
-conda create -n pybot python=2
-```
-Both `PYTHONPATH` and `LD_LIBRARY_PATH` should have been set automatically on environment activation. See activate.sh / deactivate.sh.
-
-### To install packages
+### Install miniconda and add to PATH
 Install anaconda if you don't have it (instructions here for OS X)
 ```sh
 wget http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh
 sh Miniconda-latest-MacOSX-x86_64.sh -b -p $HOME/anaconda
-```
-
-# Add anaconda to your $PATH
-```sh
 export PATH=$HOME/anaconda/bin:$PATH
 ```
 
 ### To build packages
-Get the newest version of conda, as well as some conda build tools
+Get the newest version of conda, as well as some conda build tools.
 ```sh
 conda update conda -y
 conda install conda-build anaconda-client -y
 ```
 
-Build all packages
+Create a new environment, and build all packages.
+Both `PYTHONPATH` and `LD_LIBRARY_PATH` should have been set automatically on environment activation. See activate.sh / deactivate.sh.
 ```sh
+conda create -n slam_env python=2
+source activate slam_env
 build_all.sh
 ```
 
-# More useful stuff
+### More useful stuff
 ```sh
 conda install -c asmeurer emacs=24.5
 conda install -c menpo eigen=3.2.7
 ```
+
+### More resources
+https://github.com/jakevdp/conda-recipes<br>
+https://github.com/alexbw/conda-lua-recipes
