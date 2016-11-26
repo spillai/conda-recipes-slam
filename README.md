@@ -25,13 +25,3 @@ conda create -n slam_env python=2
 source activate slam_env
 build_all.sh
 ```
-
-### More useful stuff
-```sh
-conda install -c asmeurer emacs=24.5
-conda install -c menpo eigen=3.2.7
-```
-
-### More resources
-https://github.com/jakevdp/conda-recipes<br>
-https://github.com/alexbw/conda-lua-recipes
