@@ -1,0 +1,56 @@
+sudo: false
+language: generic
+
+cache:
+  directories:
+  - $HOME/.cache/pip
+  - $HOME/.ccache
+
+matrix:
+  include:
+    - os: linux
+      python: 2.7
+    - os: linux
+      python: 3.5
+    - os: linux
+      python: 3.6
+  
+dist: trusty
+
+notifications:
+    email: true
+
+before_install:
+  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+      sudo apt-get update;
+    fi; 
+  - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
+      if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+        wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
+      else
+        wget https://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh -O miniconda.sh;
+      fi;
+    else
+      if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+        wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+      else
+        wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
+      fi;
+    fi;
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda config --set anaconda_upload yes
+  - conda config --add channels menpo
+  - conda update -q conda
+  - conda info -a
+  - conda install -y conda-build anaconda-client
+  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION
+
+install:
+  - source activate test-environment
+  - ./build_all.sh
+
+script:
+  - echo $TRAVIS_PYTHON_VERSION

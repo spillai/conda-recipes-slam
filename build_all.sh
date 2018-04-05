@@ -1,5 +1,3 @@
-conda config --set anaconda_upload no
-
 conda build isam
 conda install --use-local isam -y
 
