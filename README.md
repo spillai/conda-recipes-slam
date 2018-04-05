@@ -3,6 +3,8 @@
 Author: [Sudeep Pillai](http://people.csail.mit.edu/spillai)<br>
 License: MIT
 
+[![Build Status](https://travis-ci.org/spillai/conda-recipes-slam.svg?branch=master)](https://travis-ci.org/spillai/conda-recipes-slam)
+
 ### Install
 Install miniconda if you don't have it and add to path
 ```sh
