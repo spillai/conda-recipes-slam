@@ -1,3 +1,4 @@
+conda install lapack -c conda-forge
 conda build isam
 conda install --use-local isam -y
 
