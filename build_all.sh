@@ -1,4 +1,5 @@
-conda install lapack -c conda-forge
+# conda install lapack -c conda-forge
+conda install suitesparse -c menpo
 conda build isam
 conda install --use-local isam -y
 
