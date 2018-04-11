@@ -1,13 +1,13 @@
-# conda install lapack -c conda-forge
-conda install suitesparse -c menpo
-conda build isam
-conda install --use-local isam -y
+# conda install suitesparse -c menpo -y
+# conda build isam
+# conda install --use-local isam -y
 
 # conda build pyisam
 # conda install --use-local pyisam -y
 
-# conda build gtsam
-# conda install --use-local gtsam -y
+conda install -c intel mkl -y
+conda build gtsam
+conda install --use-local gtsam -y
 
 # conda build pygtsam
 # conda install --use-local pygtsam -y

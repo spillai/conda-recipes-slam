@@ -3,8 +3,9 @@ package:
     version: 3.2.1
 
 source:
-    fn: gtsam-3.2.1.zip
-    url: https://research.cc.gatech.edu/borg/sites/edu.borg/files/downloads/gtsam-3.2.1.zip
+    fn: gtsam-3.2.1.tar.gz
+    url: https://bitbucket.org/gtborg/gtsam/get/3.2.1.tar.gz
+    md5: 699068a0777102a45ced326ca11c3b22
   
 build:
     number: 0
@@ -14,8 +15,11 @@ requirements:
         - cmake
         - eigen
         - numpy
+        - boost ==1.57.0
+
     run:
         - cmake
+        - boost ==1.57.0
 
 about:
     home: https://bitbucket.org/gtborg/gtsam
