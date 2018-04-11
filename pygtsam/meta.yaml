@@ -21,3 +21,4 @@ requirements:
 about:
     home: https://collab.cc.gatech.edu/borg/gtsam/
     license: BSD
+    summary: Georgia Tech Smoothing and Mapping library (Python)
