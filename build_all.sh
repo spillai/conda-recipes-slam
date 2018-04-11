@@ -5,10 +5,10 @@
 # conda build pyisam
 # conda install --use-local pyisam -y
 
-conda install -c intel mkl -y
+conda install -c intel mkl tbb -y
 conda build gtsam
 conda install --use-local gtsam -y
 
-# conda build pygtsam
-# conda install --use-local pygtsam -y
+conda build pygtsam
+conda install --use-local pygtsam -y
 
