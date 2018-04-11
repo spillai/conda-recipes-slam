@@ -13,10 +13,12 @@ requirements:
       - python
       - cmake
       - numpy
+      - gtsam
       
     run:
       - python
       - numpy
+      - gtsam
       
 about:
     home: https://collab.cc.gatech.edu/borg/gtsam/
