@@ -1,4 +1,5 @@
-# conda install suitesparse -c menpo -y
+conda install suitesparse -c menpo -y
+
 # conda build isam
 # conda install --use-local isam -y
 

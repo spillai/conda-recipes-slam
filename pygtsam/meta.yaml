@@ -15,11 +15,15 @@ requirements:
       - cmake
       - numpy
       - gtsam
+      - boost ==1.57.0
+      - eigen
 
     run:
       - python
       - numpy
       - gtsam
+      - boost ==1.57.0
+      - eigen
 
 about:
     home: https://collab.cc.gatech.edu/borg/gtsam/
